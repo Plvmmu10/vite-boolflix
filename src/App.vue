@@ -27,6 +27,7 @@ export default {
   methods: {
     newSearch() {
       const filmUrl = cards.basepath + cards.moviepoint + cards.authkey + cards.endpoint;
+      const seriesUrl = cards.basepath + cards.seriespoint + cards.authkey + cards.endpoint;
 
       let searched = {};
       let params = {};
@@ -34,6 +35,12 @@ export default {
       for (let key in cards.filmSearch) {
         if (cards.filmSearch[key]) {
           params[key] = cards.filmSearch[key]
+        }
+      }
+
+      for (let key in cards.seriesSearch) {
+        if (cards.seriesSearch[key]) {
+          params[key] = cards.seriesSearch[key]
         }
       }
 
@@ -45,12 +52,16 @@ export default {
         cards.cardsList = res.data.results
       })
 
+      axios.get(seriesUrl, searched).then((res) => {
+        cards.cardsList = res.data.results
+      })
+
 
 
     }
   },
   mounted() {
-    cards.endpoint = '&language=en-US&query=a&page=1&include_adult=false';
+    cards.endpoint = '&language=en-US&query=g&page=1&include_adult=false';
     this.newSearch()
   }
 }

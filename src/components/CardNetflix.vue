@@ -4,6 +4,8 @@
             <div class="card-image"></div>
             <div class="card-body">
                 <h3>{{ title }}</h3>
+                <h3>{{ name }}</h3>
+                <h6>{{ originalName }}</h6>
                 <h6>{{ originalTitle }}</h6>
                 <p>{{ language }}</p>
                 <p>{{ vote }}</p>
