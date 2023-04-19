@@ -12,5 +12,24 @@ $fa-font-path: './webfonts';
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: $main-color;
+    overflow: auto;
+}
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $tertiary-color;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: $subtitle;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $secondary-color;
 }
