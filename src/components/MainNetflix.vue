@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="myContainer">
         <CardsList />
     </div>
 </template>
@@ -15,7 +15,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-    margin-top: 100px;
+.myContainer {
+    margin: 80px 0 0 0;
+    padding-top: 1rem;
+    width: 95%;
 }
 </style>
