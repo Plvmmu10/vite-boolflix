@@ -6,17 +6,30 @@
             </div>
 
             <div class="input-container">
-                <input type="text" name="searchBar" id="searchBar" placeholder="Cerca il tuo film" class="rounded-2 p-1">
+                <input type="text" name="searchBar" id="searchBar" placeholder="Cerca il tuo film" class="rounded-2 p-1"
+                    @input="goSearch" v-model.trim="cards.filmSearch.query">
 
-                <button class="btn btn-outline-danger mx-2">Invia</button>
+                <button class="btn btn-outline-danger mx-2" @click="goSearch">Invia</button>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import { cards } from '../data/data.js';
+import axios from 'axios';
 export default {
     name: 'NavbarNetflix',
+    data() {
+        return {
+            cards
+        }
+    },
+    methods: {
+        goSearch() {
+            this.$emit('goSearch')
+        }
+    }
 }
 </script>
 
@@ -30,6 +43,7 @@ header {
     right: 0;
     left: 0;
     height: 80px;
+    z-index: 1000;
 
     #myNavbar {
         width: 70%;
