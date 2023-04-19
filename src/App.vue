@@ -49,22 +49,27 @@ export default {
       }
 
       axios.get(filmUrl, searched).then((res) => {
-        cards.cardsList = res.data.results
+        cards.cardsMovie = res.data.results;
       })
 
       axios.get(seriesUrl, searched).then((res) => {
-        cards.cardsList = res.data.results
+        cards.cardsSeries = res.data.results;
       })
-
-
 
     }
   },
   mounted() {
-    cards.endpoint = '&language=en-US&query=g&page=1&include_adult=false';
+    cards.endpoint = '&language=it&query=g&page=1&include_adult=false';
     this.newSearch()
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use './assets/styles/partials/variables' as *;
+
+main {
+  display: flex;
+  justify-content: center;
+}
+</style>
