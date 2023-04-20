@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-2 col-sm-6 col-md-4 gap-1">
+    <div class="col-sm-6 col-md-5 col-lg-3 p-2">
         <div class="card border-0 h-100 w-100">
             <div class="card-image" :class="show ? 'active' : 'deactive'" @mouseenter="showInfo" @mouseleave="showInfo">
                 <img :src="imageUrl" :alt="card.title" class="img-fluid w-100 h-100">

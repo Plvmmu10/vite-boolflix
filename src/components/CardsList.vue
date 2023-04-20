@@ -56,9 +56,11 @@ h1 {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    height: 100%;
 }
 
 .row-container {
     margin-bottom: 4rem;
+    height: 400px;
 }
 </style>
