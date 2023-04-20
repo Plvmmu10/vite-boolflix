@@ -2,16 +2,14 @@
     <div id="filmContainer">
         <h1>Film consigliati</h1>
         <div class="row">
-            <CardNetflix v-for="card in cards.cardsMovie" :key="card.id" :title="card.title"
-                :originalTitle="card.original_title" :language="card.original_language" :vote="card.vote_average" />
+            <CardNetflix v-for="card in cards.cardsMovie" :key="card.id" :card="card" />
         </div>
     </div>
 
     <div id="seriesContainer">
         <h1>Serie TV consigliate</h1>
         <div class="row" id="seriesRow">
-            <CardNetflix v-for="card in cards.cardsSeries" :key="card.id" :name="card.name"
-                :originalName="card.original_name" :language="card.original_language" :vote="card.vote_average" />
+            <CardNetflix v-for="card in cards.cardsSeries" :key="card.id" :card="card" />
         </div>
     </div>
 </template>
