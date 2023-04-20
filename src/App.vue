@@ -59,7 +59,7 @@ export default {
     }
   },
   mounted() {
-    cards.endpoint = '&language=it&query=g&page=1&include_adult=false';
+    cards.endpoint = '&language=it&query=a&page=1&include_adult=false';
     this.newSearch()
   }
 }
