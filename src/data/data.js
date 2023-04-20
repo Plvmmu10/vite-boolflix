@@ -8,19 +8,12 @@ export const cards = reactive({
     endpoint: '',
     moviepoint: 'search/movie',
     seriespoint: 'search/tv',
+    imagePath: 'https://image.tmdb.org/t/p/original',
     filmSearch: {
-        query: '',
-        title: '',
-        original_title: '',
-        original_language: '',
-        vote_average: ''
+        query: ''
     },
     seriesSearch: {
-        query: '',
-        name: '',
-        original_name: '',
-        original_language: '',
-        vote_average: ''
+        query: ''
     }
 
 })
