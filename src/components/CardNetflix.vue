@@ -1,14 +1,18 @@
 <template>
     <div class="col-2 gap-1">
         <div class="card border-0 h-100 w-100">
-            <div class="card-image">
+            <div class="card-image" :class="show ? 'active' : 'deactive'" @click="showInfo">
                 <img :src="imageUrl" :alt="card.title" class="img-fluid w-100 h-100">
             </div>
-            <div class="card-body">
+            <div class="card-body" :class="show ? 'deactive' : 'active'" @click="showInfo">
                 <h3>{{ card.title }}</h3>
                 <h3>{{ card.name }}</h3>
 
-                <div class="rating mt-3 pb-5">
+                <div class="movie-info my-4">
+                    <p>{{ card.overview }}</p>
+                </div>
+
+                <div class="rating mt-5">
                     <p class="m-0">{{ card.vote_average }}</p>
                 </div>
 
@@ -26,7 +30,8 @@ export default {
         return {
             cards,
             basePath: cards.imagePath,
-            imageUrl: ''
+            imageUrl: '',
+            show: true
         };
 
     },
@@ -35,6 +40,9 @@ export default {
             if (this.card.poster_path === null) {
                 this.imageUrl = 'image/img-not-found.png'
             }
+        },
+        showInfo() {
+            this.show = !this.show
         }
     },
     mounted() {
@@ -48,19 +56,41 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 
+.card {
+    position: relative;
+}
+
 .card-image {
     width: 100%;
-    height: 50%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    transition: opacity 1s;
 }
 
 .card-body {
     background-color: $subtitle;
     color: white;
-    position: relative;
+    cursor: pointer;
+    transition: opacity 1s;
+
+    .movie-info {
+        height: 150px;
+        overflow: auto;
+    }
 
     .rating {
         position: absolute;
-        bottom: 0;
+        bottom: 5px;
     }
+}
+
+.active {
+    opacity: 1;
+}
+
+.deactive {
+    opacity: 0;
 }
 </style>
