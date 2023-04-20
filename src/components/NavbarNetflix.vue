@@ -1,7 +1,7 @@
 <template>
     <header>
         <div id="myNavbar" class="d-flex justify-content-between align-items-center">
-            <div class="title-container">
+            <div class="title-container" @click="resetSearch">
                 <h1 class="fw-bold m-0 text-uppercase">Boolflix</h1>
             </div>
 
@@ -9,7 +9,7 @@
                 <input type="text" name="searchBar" id="searchBar" placeholder="Cerca il tuo film" class="rounded-2 p-1"
                     @keyup.enter="goSearch" v-model.trim="cards.filmSearch.query">
 
-                <button class="btn" @click="goSearch">Cerca</button>
+                <button class="btn mx-2" @click="goSearch">Cerca</button>
 
             </div>
         </div>
@@ -27,6 +27,10 @@ export default {
     },
     methods: {
         goSearch() {
+            this.$emit('goSearch')
+        },
+        resetSearch() {
+            this.cards.filmSearch.query = '';
             this.$emit('goSearch')
         }
     }
@@ -59,6 +63,11 @@ header {
             background-color: transparent;
             color: white;
             border: 0;
+            cursor: pointer;
+
+            &:hover {
+                border: 1px solid $secondary-color;
+            }
         }
 
         button {
