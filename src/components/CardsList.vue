@@ -8,7 +8,7 @@
 
     <div id="seriesContainer">
         <h1>Serie TV consigliate</h1>
-        <div class="row" id="seriesRow">
+        <div class="row">
             <CardNetflix v-for="card in cards.cardsSeries" :key="card.id" :card="card" />
         </div>
     </div>
