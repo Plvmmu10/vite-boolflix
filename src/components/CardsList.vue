@@ -1,15 +1,29 @@
 <template>
-    <div id="filmContainer">
+    <div class="row-container">
         <h1>Film consigliati</h1>
         <div class="row">
             <CardNetflix v-for="card in cards.cardsMovie" :key="card.id" :card="card" />
         </div>
     </div>
 
-    <div id="seriesContainer">
+    <div class="row-container">
         <h1>Serie TV consigliate</h1>
         <div class="row">
             <CardNetflix v-for="card in cards.cardsSeries" :key="card.id" :card="card" />
+        </div>
+    </div>
+
+    <div class="row-container">
+        <h1>I più popolari</h1>
+        <div class="row">
+            <CardNetflix v-for="card in cards.popularMovie" :key="card.id" :card="card" />
+        </div>
+    </div>
+
+    <div class="row-container">
+        <h1>I più votati</h1>
+        <div class="row">
+            <CardNetflix v-for="card in cards.topratedMovie" :key="card.id" :card="card" />
         </div>
     </div>
 </template>
@@ -44,8 +58,7 @@ h1 {
     overflow-x: auto;
 }
 
-#filmContainer,
-#seriesContainer {
+.row-container {
     margin-bottom: 4rem;
 }
 </style>

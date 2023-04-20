@@ -28,6 +28,8 @@ export default {
     newSearch() {
       const filmUrl = cards.basepath + cards.moviepoint + cards.authkey + cards.endpoint;
       const seriesUrl = cards.basepath + cards.seriespoint + cards.authkey + cards.endpoint;
+      const popularUrl = cards.basepath + cards.popularpoint + cards.authkey + cards.endpoint;
+      const ratedUrl = cards.basepath + cards.topratedpoint + cards.authkey + cards.endpoint;
 
       let searched = {};
       let params = {};
@@ -50,6 +52,14 @@ export default {
 
       axios.get(filmUrl, searched).then((res) => {
         cards.cardsMovie = res.data.results;
+      })
+
+      axios.get(popularUrl, searched).then((res) => {
+        cards.popularMovie = res.data.results;
+      })
+
+      axios.get(ratedUrl, searched).then((res) => {
+        cards.topratedMovie = res.data.results;
       })
 
       axios.get(seriesUrl, searched).then((res) => {
