@@ -1,8 +1,8 @@
 <template>
     <header>
         <div id="myNavbar" class="d-flex justify-content-between align-items-center">
-            <div class="title-container" @click="resetSearch">
-                <h1 class="fw-bold m-0 text-uppercase">Boolflix</h1>
+            <div class="logo-container" @click="resetSearch">
+                <img src="image/Boolflix.png" alt="boolflixLogo" class="w-100 h-100">
             </div>
 
             <div class="d-flex justify-content-center align-items-center flex-wrap d-none d-md-flex">
@@ -71,8 +71,9 @@ header {
         padding: 1rem;
         color: $secondary-color;
 
-        .title-container {
+        .logo-container {
             cursor: pointer;
+            width: 10%;
         }
 
         ul {
