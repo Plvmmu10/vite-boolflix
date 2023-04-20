@@ -5,7 +5,7 @@
                 <h1 class="fw-bold m-0 text-uppercase">Boolflix</h1>
             </div>
 
-            <div class="d-flex justify-content-center align-items-center flex-wrap">
+            <div class="d-flex justify-content-center align-items-center flex-wrap d-none d-md-flex">
                 <ul class="d-flex m-0 p-0 flex-wrap">
                     <li v-for="item in navLink" class="px-2">
                         <a href="#" class="text-decoration-none">{{ item }}</a>
