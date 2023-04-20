@@ -5,6 +5,14 @@
                 <h1 class="fw-bold m-0 text-uppercase">Boolflix</h1>
             </div>
 
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <ul class="d-flex m-0 p-0 flex-wrap">
+                    <li v-for="item in navLink" class="px-2">
+                        <a href="#" class="text-decoration-none">{{ item }}</a>
+                    </li>
+                </ul>
+            </div>
+
             <div class="input-container">
                 <input type="text" name="searchBar" id="searchBar" placeholder="Cerca il tuo film" class="rounded-2 p-1"
                     @keyup.enter="goSearch" v-model.trim="cards.filmSearch.query">
@@ -22,7 +30,15 @@ export default {
     name: 'NavbarNetflix',
     data() {
         return {
-            cards
+            cards,
+            navLink: [
+                'Home',
+                'Serie TV',
+                'Film',
+                'Originali',
+                'Aggiunti di recente',
+                'La mia lista'
+            ]
         }
     },
     methods: {
@@ -58,6 +74,20 @@ header {
         .title-container {
             cursor: pointer;
         }
+
+        ul {
+            list-style-type: none;
+
+            a {
+                color: white;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+
+        }
+
 
         #searchBar {
             background-color: transparent;
