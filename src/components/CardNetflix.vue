@@ -1,10 +1,10 @@
 <template>
-    <div class="col-2 gap-1">
+    <div class="col-lg-2 col-sm-6 col-md-4 gap-1">
         <div class="card border-0 h-100 w-100">
-            <div class="card-image" :class="show ? 'active' : 'deactive'" @click="showInfo">
+            <div class="card-image" :class="show ? 'active' : 'deactive'" @mouseenter="showInfo" @mouseleave="showInfo">
                 <img :src="imageUrl" :alt="card.title" class="img-fluid w-100 h-100">
             </div>
-            <div class="card-body" :class="show ? 'deactive' : 'active'" @click="showInfo">
+            <div class="card-body" :class="show ? 'deactive' : 'active'" @mouseenter="showInfo" @mouseleave="showInfo">
                 <h3>{{ card.title }}</h3>
                 <h3>{{ card.name }}</h3>
 
@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="rating mt-5">
-                    <p class="m-0">{{ card.vote_average }}</p>
+                    <i class="fa-solid fa-star" v-for="star in Math.trunc(card.vote_average / 2)"></i>
                 </div>
 
             </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { cards } from '../data/data.js'
+import { cards } from '../data/data.js';
 export default {
     name: 'CardNetflix',
     props: ['card'],
@@ -31,7 +31,7 @@ export default {
             cards,
             basePath: cards.imagePath,
             imageUrl: '',
-            show: true
+            show: true,
         };
 
     },
@@ -43,7 +43,8 @@ export default {
         },
         showInfo() {
             this.show = !this.show
-        }
+        },
+
     },
     mounted() {
         this.imageUrl = `${this.basePath}${this.card.poster_path}`;
@@ -66,14 +67,14 @@ export default {
     position: absolute;
     bottom: 0;
     cursor: pointer;
-    transition: opacity 1s;
+    transition: opacity .7s;
 }
 
 .card-body {
     background-color: $subtitle;
     color: white;
     cursor: pointer;
-    transition: opacity 1s;
+    transition: opacity .7s;
 
     .movie-info {
         height: 150px;
@@ -82,7 +83,7 @@ export default {
 
     .rating {
         position: absolute;
-        bottom: 5px;
+        bottom: 5%;
     }
 }
 
