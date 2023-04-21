@@ -1,4 +1,5 @@
 <template>
+    <!-- RECOMMENDED FILMS SECTION -->
     <div class="row-container">
         <h1>Film consigliati</h1>
         <div class="row">
@@ -6,6 +7,8 @@
         </div>
     </div>
 
+
+    <!-- RECOMMENDED TV SERIES SECTION -->
     <div class="row-container">
         <h1>Serie TV consigliate</h1>
         <div class="row">
@@ -13,6 +16,8 @@
         </div>
     </div>
 
+
+    <!-- MOST POPULAR FILMS SECTION -->
     <div class="row-container">
         <h1>I più popolari</h1>
         <div class="row">
@@ -20,6 +25,8 @@
         </div>
     </div>
 
+
+    <!-- TOP RATED FILMS SECTION -->
     <div class="row-container">
         <h1>I più votati</h1>
         <div class="row">
