@@ -13,7 +13,8 @@
                 </div>
 
                 <div class="rating mt-5">
-                    <i class="fa-solid fa-star" v-for="star in Math.trunc(card.vote_average / 2)"></i>
+                    <i class="fa-star" v-for="star in 5" :class="(star <= stars ? 'fa-solid' : 'fa-regular')"></i>
+
                 </div>
 
             </div>
@@ -32,6 +33,7 @@ export default {
             basePath: cards.imagePath,
             imageUrl: '',
             show: true,
+            stars: Math.trunc(this.card.vote_average / 2)
         };
 
     },
